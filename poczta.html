@@ -1,23 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Poczta i Kalkulator</title>
+    <style>
+        body { background-color: #f0f0f0; display: flex; justify-content: center; padding-top: 50px; font-family: Arial; }
+        .kontener { background-color: #e040fb; width: 600px; padding: 20px; border: 2px solid black; }
+        h3 { text-align: center; background: white; margin: 0 0 20px 0; padding: 5px; }
+        .glowny-uklad { display: flex; gap: 15px; }
+        .kolumna-lewa, .kolumna-prawa { background: #eee; border: 1px solid black; padding: 15px; flex: 1; }
+        .wiadomosc { background: yellow; border: 1px dotted black; margin-bottom: 8px; padding: 5px; font-size: 13px; }
+        .kalkulator input { width: 40px; text-align: center; margin-bottom: 5px; }
+        .wynik-box { background: white; border: 1px solid black; margin-top: 10px; padding: 5px; min-height: 20px; font-weight: bold; }
+    </style>
 </head>
 <body>
-    <div class="haczyk">
+
+    <div class="kontener">
         <h3>PANEL POCZTY</h3>
-            <div class="glowna">
-                <div class="kolumna-lewa">
-                    <strong>SCAM WIADOMOSCI</strong>
-                    <div style="margin-top: 10px;">
-                        <div class="wiadomosci">Babcia marysia:<br> ,,Wnusiu daj mi rente"</div>
-                        <div class="wiadomosci">AJFON: <br>,,BRAWO WYGRALES AJFONA 6S"</div>
-                        <div class="wiadomosci">Dziecko z afryki:<br>,,Daj wode prosze"</div>
-                    </div>
+
+        <div class="glowny-uklad">
+            <div class="kolumna-lewa">
+                <strong>SCAM WIADOMOŚCI</strong>
+                <div style="margin-top: 10px;">
+                    <div class="wiadomosc">Od: Babcia Marysia <br> Treść: Oddaj rente...</div>
+                    <div class="wiadomosc">Od: Wygrałeś ajfona <br> Treść: Kliknij tutaj...</div>
+                    <div class="wiadomosc">Od: Dziecko z afryki <br> Treść: Daj wode...</div>
                 </div>
             </div>
+
+            <div class="kolumna-prawa kalkulator">
+                <strong>PROSTY KALKULATOR</strong>
+                <p style="font-size: 12px;">Wpisz liczby i znak (+, -, *, /)</p>
+                
+                <input type="number" id="liczba1" placeholder="L1">
+                <input type="text" id="znak" placeholder="+ - * /" maxlength="1">
+                <input type="number" id="liczba2" placeholder="L2">
+                
+                <button onclick="oblicz()">OBLICZ</button>
+
+                <div class="wynik-box" id="wynik">Wynik: </div>
+            </div>
+        </div>
+
+        <br>
+        <a href="index.html" style="color: white; font-weight: bold;">WYLOGUJ</a>
     </div>
+
+    <script src="skrypt.js"></script>
+
 </body>
 </html>
